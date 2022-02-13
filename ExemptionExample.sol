@@ -11,7 +11,7 @@ contract ExceptionExample {
 
     function withdrawMoney(address payable _to,uint64 _amount) public {
         require(_amount <= balanceRecieved[msg.sender] , "You do not have enough funds");
-        assert(balanceRecieved[msg.sender] >= balanceRecieved[msg.sender] - _amount)
+        assert(balanceRecieved[msg.sender] >= balanceRecieved[msg.sender] - _amount);
         balanceRecieved[msg.sender] -= _amount;
         _to.transfer(_amount);
     }
